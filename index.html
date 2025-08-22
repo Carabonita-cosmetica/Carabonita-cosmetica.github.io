@@ -261,38 +261,47 @@
 
 
   <!-- ===== Contacto ===== -->
-  <section id="contacto" class="contact" aria-label="Contacto">
-    <div class="container">
-      <h2>Contactanos</h2>
+<section id="contacto" class="contact" aria-label="Contacto">
+  <div class="container">
+    <h2>Contactanos</h2>
 
-      <div class="contact-grid">
-        <div class="contact-form fade-in">
-          <form id="contact-form" action="https://formspree.io/f/XXXXXXXX" method="POST" novalidate>
-            <label for="name">Nombre</label>
-            <input id="name" name="name" type="text" required autocomplete="name" />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required autocomplete="email" />
-
-            <label for="message">Mensaje</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit" class="btn">Enviar Mensaje</button>
-            <p class="form-status" aria-live="polite"></p>
-          </form>
-        </div>
-
-        <div class="map fade-in" aria-label="Mapa de ubicación">
+    <div class="contact-grid">
+      <!-- Mapa: Martínez -->
+      <article class="map-card fade-in">
+        <h3>Consultorio Martínez</h3>
+        <div class="map">
+          <!-- Pegá aquí el EMBED de Google Maps para tu dirección de Martínez -->
           <iframe
-            title="Mapa de CARABONITA"
+            title="Mapa Consultorio Martínez"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.9890430436753!2d-58.52823725969066!3d-34.50552661056074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb1a94d0228af%3A0x939bba707f58e27d!2sViviana%20Grig%C3%BCelo%20y%20Esteban%20Vaccaro%20R%C3%8DO%20ODONTOLOG%C3%8DA!5e0!3m2!1ses!2sar!4v1755889446396!5m2!1ses!2sar"
+            width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <p class="map-note">
+          <a href="https://maps.google.com" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </p>
+      </article>
+
+      <!-- Mapa: Munro -->
+      <article class="map-card fade-in">
+        <h3>Consultorio Munro</h3>
+        <div class="map">
+          <iframe
+            title="Mapa Consultorio Munro"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.984769112324!2d-58.52094552342062!3d-34.528613853537045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0d04697e663%3A0xbd6a536d8372de74!2sMaquinista%20Carregal%202445%2C%20B1605BVI%20Munro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1754721267865!5m2!1ses!2sar"
             width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
-      </div>
+        <p class="map-note">
+          <a href="https://maps.google.com" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </p>
+      </article>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ===== Footer ===== -->
   <footer class="footer" role="contentinfo">
@@ -301,7 +310,7 @@
         <p>&copy; 2025 CARABONITA. Todos los derechos reservados.</p>
 
         <div class="social-links" aria-label="Redes sociales">
-          <a href="https://www.instagram.com/TU_USUARIO/" target="_blank" rel="noopener" aria-label="Instagram">
+          <a href="https://www.instagram.com/carabonitacosmetica/" target="_blank" rel="noopener" aria-label="Instagram">
             <i class="fab fa-instagram" aria-hidden="true"></i>
           </a>
           <a href="https://wa.me/5491138523271" target="_blank" rel="noopener" aria-label="WhatsApp">
