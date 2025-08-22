@@ -1,0 +1,288 @@
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+:root{
+  --primary-color:#fce4ec;
+  --secondary-color:#fcdde4;
+  --text-color:#333;
+  --heading-color:#5d4037;
+  --white:#fff;
+  --shadow:0 4px 10px rgba(0,0,0,.12);
+  --radius:14px;
+  --header-h:90px;
+
+  --pattern-size: clamp(140px, 18vw, 360px);
+  --pattern-url: url("images/lechuzas-pattern.png");
+}
+
+/* Evitar fondos fijos en mobile que saltan */
+@media (max-width:1024px){
+  body,
+  .nuevos-tratamientos,
+  .consultorios{
+    background-attachment: scroll;
+  }
+}
+
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header-h)}
+body{
+  font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text-color);
+  background:var(--white);
+  line-height:1.6;
+
+  /* Fondo patrón global sutil */
+  background-image: var(--pattern-url);
+  background-repeat: repeat;
+  background-size: var(--pattern-size) auto;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.container{
+  max-width:1200px;
+  margin:0 auto;
+  padding-inline:clamp(16px,4vw,24px);
+}
+
+h1,h2,h3{font-family:"Playfair Display",serif;color:var(--heading-color)}
+h1{font-size:clamp(1.9rem,3.6vw,3.2rem)}
+h2{font-size:clamp(1.6rem,2.5vw,2.4rem);text-align:center;margin-bottom:clamp(28px,4vw,48px)}
+h3{font-size:clamp(1.1rem,1.6vw,1.8rem)}
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+.btn{
+  display:inline-block;padding:14px 26px;border:0;border-radius:48px;font-weight:700;
+  background:var(--primary-color);color:var(--heading-color);box-shadow:var(--shadow);
+  cursor:pointer;transition:transform .25s,background .25s,color .25s;
+}
+.btn:hover{transform:translateY(-2px);background:#f8bbd0;color:#fff}
+.btn-outline{background:transparent;border:2px solid #fff;color:#fff}
+
+/* =========================================================
+   HEADER / NAV
+   ========================================================= */
+.header{position:fixed;inset:0 0 auto 0;height:var(--header-h);background:rgba(255,255,255,.95);box-shadow:var(--shadow);z-index:1000}
+.header .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo img{max-height:95px;height:auto;width:auto}
+
+.nav-menu ul{list-style:none;display:flex;gap:28px}
+.nav-menu a{color:var(--heading-color);font-weight:600;text-decoration:none;position:relative}
+.nav-menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:3px;background:var(--primary-color);border-radius:2px}
+
+/* Hamburguesa */
+.hamburger{display:none;flex-direction:column;gap:5px;background:transparent;border:0;cursor:pointer}
+.hamburger span{width:26px;height:3px;background:#333;display:block;border-radius:2px}
+
+/* Menú móvil */
+@media (max-width:920px){
+  .hamburger{display:flex}
+  .nav-menu{
+    position:fixed;inset:var(--header-h) 0 auto 0;background:#fff;
+    transform:translateY(-100%);transition:.3s transform;box-shadow:var(--shadow)
+  }
+  .nav-menu.open{transform:translateY(0)}
+  .nav-menu ul{flex-direction:column;padding:18px 24px}
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{position:relative;min-height:clamp(520px,100svh,900px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}
+.hero .parallax{position:absolute;inset:0;background:url('images/hero.jpg') center/cover no-repeat;transform:translateZ(0);will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.75),rgba(0,0,0,.55))}
+.hero-content{position:relative;z-index:1;padding:28px 26px;border-radius:14px;background:rgba(0,0,0,.35);backdrop-filter:saturate(140%) blur(2px);-webkit-backdrop-filter:saturate(140%) blur(2px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.hero-content h1{color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.hero-content p{color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.hero .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+
+/* =========================================================
+   SECCIONES
+   ========================================================= */
+section{padding-block:clamp(64px,9vw,100px)}
+
+/* =========================================================
+   TRATAMIENTOS
+   ========================================================= */
+.nuevos-tratamientos{
+  background-color:var(--secondary-color);
+  background-image:var(--pattern-url);
+  background-repeat:repeat;
+  background-size:var(--pattern-size) auto;
+  background-attachment:fixed;
+  background-position:center;
+  background-blend-mode:multiply;
+}
+.treatment-cards{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);text-align:center;transition:transform .25s}
+.card:hover{transform:translateY(-8px)}
+.card-media{border-radius:var(--radius) var(--radius) 0 0;overflow:hidden}
+.card-media img{display:block;width:100%;height:220px;object-fit:cover}
+.card-header{background:var(--primary-color);margin:18px;border-radius:12px;padding:16px}
+.card h3{margin:0 18px 8px}
+.card p{margin:0 18px 24px}
+
+/* =========================================================
+   SOBRE MÍ
+   ========================================================= */
+.about-us{background:var(--white)}
+.about-content{display:flex;align-items:center;gap:40px}
+.about-content img{
+  width:min(520px,100%);max-width:520px;height:auto;border-radius:var(--radius);box-shadow:var(--shadow)
+}
+.about-content .text-content{width:50%}
+.about-content .btn{margin-top:14px}
+@media (max-width:900px){
+  .about-content{flex-direction:column}
+  .about-content .text-content{width:100%}
+}
+
+/* =========================================================
+   CONSULTORIOS (galería + lightbox)
+   ========================================================= */
+.consultorios{
+  background-color:var(--secondary-color);
+  background-image:var(--pattern-url);
+  background-repeat:repeat;
+  background-size:var(--pattern-size) auto;
+  background-attachment:fixed;
+  background-position:center;
+  background-blend-mode:multiply;
+}
+.consultorios-columns{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,32px)}
+@media (max-width:980px){.consultorios-columns{grid-template-columns:1fr}}
+.consultorio{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(16px,2vw,22px)}
+.consultorio-header h3{margin-bottom:4px}
+.consultorio-header p{margin-bottom:14px;color:#666}
+
+/* grilla medios */
+.media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,1.8vw,16px)}
+@media (min-width:1100px){.media-grid{grid-template-columns:repeat(3,1fr)}}
+.media-item{position:relative;display:block;border-radius:12px;overflow:hidden;background:#f2f2f2;box-shadow:var(--shadow);aspect-ratio:16/9}
+.media-item img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform .35s ease,opacity .35s ease}
+.media-item:hover img{transform:scale(1.06)}
+.media-item.video .play-badge{position:absolute;inset:auto auto 10px 10px;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:8px 10px;font-size:.9rem;display:inline-flex;align-items:center;gap:6px}
+.media-item.video .play-badge i{font-size:.85rem}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(15,15,20,.82);display:none;align-items:center;justify-content:center;z-index:1200;backdrop-filter:blur(2px)}
+.lightbox.open{display:flex}
+.lb-content{max-width:min(92vw,1100px);max-height:86vh;border-radius:14px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.35);background:#000}
+.lb-content img,.lb-content video{display:block;max-width:100%;max-height:86vh;width:auto;height:auto;object-fit:contain;background:#000}
+.lb-close{position:absolute;top:14px;right:18px;background:#fff;color:#111;border:0;width:40px;height:40px;border-radius:50%;font-size:28px;line-height:40px;box-shadow:var(--shadow);cursor:pointer}
+
+/* ===== Carrusel Consultorios ===== */
+.carousel{
+  position: relative;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  background: #fff;
+  /* alto flexible: mobile / desktop */
+  height: clamp(240px, 42vw, 460px);
+}
+
+.c-track{
+  height: 100%;
+  display: flex;
+  transition: transform .45s ease;
+  will-change: transform;
+}
+
+.c-slide{
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+}
+.c-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* La imagen SIEMPRE llena el rectángulo */
+  display: block;
+}
+
+/* Botones */
+.c-btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 42px; height: 42px;
+  border: 0; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,.9);
+  color: #333; box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.c-btn.prev{ left: 10px; }
+.c-btn.next{ right: 10px; }
+.c-btn i{ pointer-events: none; }
+
+/* Dots (indicadores) */
+.c-dots{
+  position: absolute;
+  left: 50%; bottom: 10px;
+  transform: translateX(-50%);
+  display: flex; gap: 6px;
+  z-index: 1;
+}
+.c-dot{
+  width: 9px; height: 9px; border-radius: 50%;
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(0,0,0,.15);
+  cursor: pointer;
+}
+.c-dot.is-active{ background: #fff; }
+
+/* Play badge para los videos */
+.c-slide .play-badge{
+  position: absolute;
+  inset: auto auto 12px 12px;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .9rem;
+}
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+.contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.contact-form label{display:block;margin-bottom:6px;font-weight:600}
+.contact-form input,.contact-form textarea{width:100%;padding:12px;margin-bottom:16px;border:1px solid #ccc;border-radius:10px;resize:none;font-family:inherit}
+.form-status{margin-top:6px;font-size:.95rem}
+.map{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer{background:var(--secondary-color);color:#fff;padding:36px 0}
+.footer-content{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.social-links a{color:#fff;font-size:1.4rem;margin:0 8px}
+.contact-info a{color:#fff;text-decoration:none}
+.contact-info a:hover{opacity:.9}
+
+/* =========================================================
+   WHATSAPP FAB
+   ========================================================= */
+.whatsapp-fab{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:grid;place-items:center;box-shadow:var(--shadow);z-index:1100}
+.whatsapp-fab i{font-size:1.6rem}
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+.fade-in{opacity:1;transform:none}
+.js-enabled .fade-in{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.js-enabled .fade-in.visible{opacity:1;transform:none}
