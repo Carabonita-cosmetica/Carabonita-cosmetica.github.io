@@ -107,18 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  // Delegación de eventos
-  document.addEventListener('click', (e) => {
-    const a = e.target.closest('.media-item');
-    if (!a) return;
-    e.preventDefault();
-    const type = a.dataset.type;  // 'image' | 'video'
-    const src = a.dataset.src;
-    const poster = a.dataset.poster || '';
-    if (src && (type === 'image' || type === 'video')) {
-      openLightbox({ type, src, poster });
-    }
-  });
 
   lbClose?.addEventListener('click', closeLightbox);
   lb?.addEventListener('click', (e) => {

@@ -98,7 +98,7 @@ h3{font-size:clamp(1.1rem,1.6vw,1.8rem)}
 /* =========================================================
    HERO
    ========================================================= */
-.hero{position:relative;min-height:clamp(520px,100vh,1000px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}
+.hero{position:relative;min-height:clamp(520px,100svh,1000px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden}
 .hero .parallax{position:absolute;inset:0;background:url('images/hero.jpg') center/cover no-repeat;transform:translateZ(0);will-change:transform}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.75),rgba(0,0,0,.55))}
 .hero-content{position:relative;z-index:1;padding:28px 26px;border-radius:14px;background:rgba(0,0,0,.35);backdrop-filter:saturate(140%) blur(2px);-webkit-backdrop-filter:saturate(140%) blur(2px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
@@ -166,14 +166,6 @@ section{padding-block:clamp(64px,9vw,100px)}
 .consultorio-header h3{margin-bottom:4px}
 .consultorio-header p{margin-bottom:14px;color:#666}
 
-/* grilla medios */
-.media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,1.8vw,16px)}
-@media (min-width:1100px){.media-grid{grid-template-columns:repeat(3,1fr)}}
-.media-item{position:relative;display:block;border-radius:12px;overflow:hidden;background:#f2f2f2;box-shadow:var(--shadow);aspect-ratio:16/9}
-.media-item img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1.02);transition:transform .35s ease,opacity .35s ease}
-.media-item:hover img{transform:scale(1.06)}
-.media-item.video .play-badge{position:absolute;inset:auto auto 10px 10px;background:rgba(0,0,0,.55);color:#fff;border-radius:999px;padding:8px 10px;font-size:.9rem;display:inline-flex;align-items:center;gap:6px}
-.media-item.video .play-badge i{font-size:.85rem}
 
 /* Lightbox */
 .lightbox{position:fixed;inset:0;background:rgba(15,15,20,.82);display:none;align-items:center;justify-content:center;z-index:1200;backdrop-filter:blur(2px)}
