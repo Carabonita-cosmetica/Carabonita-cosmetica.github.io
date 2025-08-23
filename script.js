@@ -164,38 +164,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     update();
   });
-
-
-  /* ============================
-     FORMSPREE (opcional)
-     ============================ */
-  const form = document.getElementById('contact-form');
-  const status = document.querySelector('.form-status');
-
-  if (form && status) {
-    form.addEventListener('submit', async (e) => {
-      // Si no configuraste tu endpoint de Formspree, no interceptamos
-      if (!form.action.includes('/f/XXXXXXXX')) return;
-
-      e.preventDefault();
-      status.textContent = 'Enviando…';
-
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (res.ok) {
-          status.textContent = '¡Gracias! Te responderé a la brevedad.';
-          form.reset();
-        } else {
-          status.textContent = 'Ups, hubo un error. Probá nuevamente.';
-        }
-      } catch {
-        status.textContent = 'Error de conexión.';
-      }
-    });
-  }
 });
