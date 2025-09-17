@@ -10,14 +10,19 @@
   <!-- OpenGraph / Twitter -->
   <meta property="og:title" content="CARABONITA – Resalta tu belleza natural" />
   <meta property="og:description" content="Tratamientos personalizados de piel y bienestar." />
-  <meta property="og:image" content="images/logo.png" />
+  <!-- TODO: reemplazar por URL ABSOLUTA de tu imagen OG -->
+  <meta property="og:image" content="https://tusitio.com/images/og-cover.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- SEO técnico extra -->
+  <meta name="theme-color" content="#fce4ec">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
 
   <!-- Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="image" href="images/hero.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
@@ -25,6 +30,42 @@
   <link rel="stylesheet" href="style.css" />
 
   <script>document.documentElement.classList.add('js-enabled');</script>
+
+  <!-- JSON-LD LocalBusiness (editar datos reales) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "CARABONITA",
+    "image": "https://carabonita-cosmetica.github.io/images/logo.png",
+    "url": "https://carabonita-cosmetica.github.io/",
+    "telephone": "+54 9 11 3852-3271",
+    "email": "carabonitacosmetica@gmail.com",
+    "sameAs": [
+      "https://www.instagram.com/carabonitacosmetica/",
+      "https://wa.me/5491138523271"
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Río de Janeiro 2293",
+        "addressLocality": "Martínez",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Maquinista Carregal 2445",
+        "addressLocality": "Munro",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      }
+    ],
+    "areaServed": "Vicente López, San Isidro",
+    "priceRange": "$$",
+    "openingHours": ["Mo-Fr 10:00-19:00", "Sa 10:00-14:00"]
+  }
+  </script>
 </head>
 <body>
   <!-- ===== Header ===== -->
@@ -32,7 +73,7 @@
     <div class="container">
       <div class="logo">
         <a href="#inicio" aria-label="Ir al inicio">
-          <img src="images/logo.png" alt="Logo CARABONITA" loading="eager" />
+          <img src="images/logo.png" alt="Logo CARABONITA" loading="eager" width="220" height="95" />
         </a>
       </div>
 
@@ -65,7 +106,12 @@
         </a>
       </div>
     </div>
-    <div class="parallax" aria-hidden="true"></div>
+
+    <!-- Parallax optimizado con <img> y width/height -->
+    <div class="parallax" aria-hidden="true">
+      <!-- TODO: colocar dimensiones reales de tu hero.jpg -->
+      <img src="images/hero.jpg" alt="" width="2400" height="1600" fetchpriority="high" />
+    </div>
   </section>
 
   <!-- ===== Tratamientos ===== -->
@@ -77,7 +123,7 @@
         <!-- Limpieza facial -->
         <article class="card fade-in">
           <figure class="card-media">
-            <img src="images/tratamientos/limpieza.jpg" alt="Limpieza facial en cabina" loading="lazy" decoding="async">
+            <img src="images/tratamientos/limpieza.jpg" alt="Limpieza facial en cabina" loading="lazy" decoding="async" width="1200" height="800">
           </figure>
           <div class="card-header"><h4>Limpieza Facial</h4></div>
           <h3>Limpieza Facial Profunda</h3>
@@ -87,7 +133,7 @@
         <!-- Exosomas -->
         <article class="card fade-in">
           <figure class="card-media">
-            <img src="images/tratamientos/exosomas.jpg" alt="Aplicación de exosomas para regeneración cutánea" loading="lazy" decoding="async">
+            <img src="images/tratamientos/exosomas.jpg" alt="Aplicación de exosomas para regeneración cutánea" loading="lazy" decoding="async" width="1200" height="800">
           </figure>
           <div class="card-header"><h4>Exosomas</h4></div>
           <h3>Terapia con Exosomas</h3>
@@ -97,19 +143,19 @@
         <!-- Microneedling -->
         <article class="card fade-in">
           <figure class="card-media">
-            <img src="images/tratamientos/microneedling.jpg" alt="Microneedling para estimular colágeno" loading="lazy" decoding="async">
+            <img src="images/tratamientos/microneedling.jpg" alt="Microneedling para estimular colágeno" loading="lazy" decoding="async" width="1200" height="800">
           </figure>
           <div class="card-header"><h4>Microneedling</h4></div>
           <h3>Microneedling Facial</h3>
           <p>Activa la producción de colágeno para reducir arrugas y mejorar la textura de la piel.</p>
         </article>
 
-        <!-- Peeling químicos -->
+        <!-- Peelings químicos -->
         <article class="card fade-in">
           <figure class="card-media">
-            <img src="images/tratamientos/peeling.jpg" alt="Peeling químico profesional" loading="lazy" decoding="async">
+            <img src="images/tratamientos/peeling.jpg" alt="Peeling químico profesional" loading="lazy" decoding="async" width="1200" height="800">
           </figure>
-          <div class="card-header"><h4>Peeling Químicos</h4></div>
+          <div class="card-header"><h4>Peelings químicos</h4></div>
           <h3>Peeling Profesional</h3>
           <p>Renueva tu piel eliminando capas superficiales para un aspecto más fresco y uniforme.</p>
         </article>
@@ -117,7 +163,7 @@
         <!-- Mesoterapia virtual -->
         <article class="card fade-in">
           <figure class="card-media">
-            <img src="images/tratamientos/mesoterapia.jpg" alt="Mesoterapia virtual sin agujas" loading="lazy" decoding="async">
+            <img src="images/tratamientos/mesoterapia.jpg" alt="Mesoterapia virtual sin agujas" loading="lazy" decoding="async" width="1200" height="800">
           </figure>
           <div class="card-header"><h4>Mesoterapia Virtual</h4></div>
           <h3>Mesoterapia sin agujas</h3>
@@ -131,12 +177,12 @@
   <section id="nosotros" class="about-us" aria-label="Sobre mí">
     <div class="container">
       <div class="about-content fade-in">
-        <img src="images/karina.png" alt="Karina, fundadora de CARABONITA" loading="lazy" />
+        <img src="images/karina.png" alt="Karina, fundadora de CARABONITA" loading="lazy" width="1040" height="780" />
         <div class="text-content">
           <h2>Sobre Mí</h2>
-          <p>Bienvenidos a CARABONITA, donde la belleza se encuentra en la armonía entre la salud y la estética. Mi nombre es Karina, y soy la fundadora de este oasis de rejuvenecimiento y cuidado de la piel. Desde mi temprana fascinación por la cosmiatría hasta convertirme en una profesional certificada, mi trayectoria ha sido moldeada por el compromiso con la excelencia y el bienestar de mis pacientes.</p>
-          <p>En CARABONITA, nos esforzamos por estar a la vanguardia de las últimas tendencias en cosmiatría. Ya sea que estén buscando rejuvenecer su piel, desvanecer imperfecciones o simplemente mimarse con un tratamiento relajante, están en las mejores manos. Estoy comprometida a brindarles una experiencia única y satisfactoria en cada visita.</p>
-          <p>¡Espero con ansias poder ayudarles a descubrir su mejor versión!<br>Con cariño,<br>Karina.</p>
+          <p>Bienvenidos a CARABONITA, donde la belleza se encuentra en la armonía entre la salud y la estética. Mi nombre es Karina y soy la fundadora de este oasis de rejuvenecimiento y cuidado de la piel.</p>
+          <p>En CARABONITA, nos esforzamos por estar a la vanguardia de las últimas tendencias en cosmiatría. Ya sea que busques rejuvenecer tu piel, desvanecer imperfecciones o simplemente mimarte con un tratamiento relajante, estás en las mejores manos.</p>
+          <p>¡Espero con ansias poder ayudarte a descubrir tu mejor versión!<br>Con cariño,<br>Karina.</p>
           <a href="#contacto" class="btn">Reservar turno</a>
         </div>
       </div>
@@ -144,164 +190,162 @@
   </section>
 
   <!-- ===== Consultorios ===== -->
-<section id="consultorios" class="consultorios" aria-label="Consultorios">
-  <div class="container">
-    <h2>Consultorios</h2>
+  <section id="consultorios" class="consultorios" aria-label="Consultorios">
+    <div class="container">
+      <h2>Consultorios</h2>
 
-    <div class="consultorios-columns">
-      <!-- Martínez -->
-      <article class="consultorio">
-        <header class="consultorio-header">
-          <h3>Martínez</h3>
-          <p>Ambiente moderno y cálido, a pasos del centro de Martínez.</p>
-        </header>
+      <div class="consultorios-columns">
+        <!-- Martínez -->
+        <article class="consultorio">
+          <header class="consultorio-header">
+            <h3>Martínez</h3>
+            <p>Ambiente moderno y cálido, a pasos del centro de Martínez.</p>
+          </header>
 
-        <!-- Carrusel -->
-        <div class="carousel" data-carousel>
-          <button class="c-btn prev" aria-label="Anterior" data-prev>
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
+          <!-- Carrusel -->
+          <div class="carousel" data-carousel>
+            <button class="c-btn prev" aria-label="Anterior" data-prev>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-          <div class="c-track" data-track>
-            <!-- Elegí el orden: el 1º es la imagen principal -->
-            <div class="c-slide is-active"
-                 data-lightbox="image"
-                 data-src="images/consultorios/martinez1.jpg">
-              <img src="images/consultorios/martinez1.jpg" alt="Consultorio Martínez - recepción">
+            <div class="c-track" data-track>
+              <div class="c-slide is-active"
+                   data-lightbox="image"
+                   data-src="images/consultorios/martinez1.jpg">
+                <img src="images/consultorios/martinez1.jpg" alt="Consultorio Martínez - recepción" loading="lazy" width="1600" height="900">
+              </div>
+
+              <div class="c-slide"
+                   data-lightbox="image"
+                   data-src="images/consultorios/martinez2.jpg">
+                <img src="images/consultorios/martinez2.jpg" alt="Consultorio Martínez - gabinete" loading="lazy" width="1600" height="900">
+              </div>
+
+              <div class="c-slide"
+                   data-lightbox="image"
+                   data-src="images/consultorios/martinez3.jpg">
+                <img src="images/consultorios/martinez3.jpg" alt="Consultorio Martínez - detalle" loading="lazy" width="1600" height="900">
+              </div>
+
+              <!-- Opcional: video como slide -->
+              <!-- <div class="c-slide"
+                   data-lightbox="video"
+                   data-src="media/consultorios/martinez-tour.mp4"
+                   data-poster="images/consultorios/martinez-tour-poster.jpg">
+                <img src="images/consultorios/martinez-tour-poster.jpg" alt="Video: Tour consultorio Martínez" loading="lazy" width="1600" height="900">
+                <span class="play-badge" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+              </div> -->
             </div>
 
-            <div class="c-slide"
-                 data-lightbox="image"
-                 data-src="images/consultorios/martinez2.jpg">
-              <img src="images/consultorios/martinez2.jpg" alt="Consultorio Martínez - gabinete">
-            </div>
+            <button class="c-btn next" aria-label="Siguiente" data-next>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
 
-            <div class="c-slide"
-                 data-lightbox="image"
-                 data-src="images/consultorios/martinez3.jpg">
-              <img src="images/consultorios/martinez3.jpg" alt="Consultorio Martínez - detalle">
-            </div>
-
-            <!-- Opcional: video como slide -->
-            <div class="c-slide"
-                 data-lightbox="video"
-                 data-src="media/consultorios/martinez-tour.mp4"
-                 data-poster="images/consultorios/martinez-tour-poster.jpg">
-              <img src="images/consultorios/martinez-tour-poster.jpg" alt="Video: Tour consultorio Martínez">
-              <span class="play-badge" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-            </div>
+            <div class="c-dots" data-dots></div>
           </div>
+        </article>
 
-          <button class="c-btn next" aria-label="Siguiente" data-next>
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
+        <!-- Munro -->
+        <article class="consultorio">
+          <header class="consultorio-header">
+            <h3>Munro</h3>
+            <p>Espacio luminoso y tranquilo, ideal para tu bienestar.</p>
+          </header>
 
-          <div class="c-dots" data-dots></div>
-        </div>
-      </article>
+          <!-- Carrusel -->
+          <div class="carousel" data-carousel>
+            <button class="c-btn prev" aria-label="Anterior" data-prev>
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-      <!-- Munro (mismo esquema) -->
-      <article class="consultorio">
-        <header class="consultorio-header">
-          <h3>Munro</h3>
-          <p>Espacio luminoso y tranquilo, ideal para tu bienestar.</p>
-        </header>
+            <div class="c-track" data-track>
+              <div class="c-slide is-active"
+                   data-lightbox="image"
+                   data-src="images/consultorios/munro1.jpg">
+                <img src="images/consultorios/munro1.jpg" alt="Consultorio Munro - recepción" loading="lazy" width="1600" height="900">
+              </div>
 
-        <!-- Carrusel -->
-        <div class="carousel" data-carousel>
-          <button class="c-btn prev" aria-label="Anterior" data-prev>
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
+              <div class="c-slide"
+                   data-lightbox="image"
+                   data-src="images/consultorios/munro2.jpg">
+                <img src="images/consultorios/munro2.jpg" alt="Consultorio Munro - gabinete" loading="lazy" width="1600" height="900">
+              </div>
 
-          <div class="c-track" data-track>
-            <div class="c-slide is-active"
-                 data-lightbox="image"
-                 data-src="images/consultorios/munro1.jpg">
-              <img src="images/consultorios/munro1.jpg" alt="Consultorio Munro - recepción">
+              <div class="c-slide"
+                   data-lightbox="image"
+                   data-src="images/consultorios/munro3.jpg">
+                <img src="images/consultorios/munro3.jpg" alt="Consultorio Munro - detalle" loading="lazy" width="1600" height="900">
+              </div>
+
+              <!-- Opcional: video -->
+              <!-- <div class="c-slide"
+                   data-lightbox="video"
+                   data-src="media/munro-tour.mp4"
+                   data-poster="images/consultorios/munro-tour-poster.jpg">
+                <img src="images/consultorios/munro-tour-poster.jpg" alt="Video: Tour consultorio Munro" loading="lazy" width="1600" height="900">
+                <span class="play-badge" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+              </div> -->
             </div>
 
-            <div class="c-slide"
-                 data-lightbox="image"
-                 data-src="images/consultorios/munro2.jpg">
-              <img src="images/consultorios/munro2.jpg" alt="Consultorio Munro - gabinete">
-            </div>
+            <button class="c-btn next" aria-label="Siguiente" data-next>
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
 
-            <div class="c-slide"
-                 data-lightbox="image"
-                 data-src="images/consultorios/munro3.jpg">
-              <img src="images/consultorios/munro3.jpg" alt="Consultorio Munro - detalle">
-            </div>
-
-            <!-- Opcional: video -->
-            <div class="c-slide"
-                 data-lightbox="video"
-                 data-src="media/munro-tour.mp4"
-                 data-poster="images/consultorios/munro-tour-poster.jpg">
-              <img src="images/consultorios/munro-tour-poster.jpg" alt="Video: Tour consultorio Munro">
-              <span class="play-badge" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-            </div>
+            <div class="c-dots" data-dots></div>
           </div>
-
-          <button class="c-btn next" aria-label="Siguiente" data-next>
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-
-          <div class="c-dots" data-dots></div>
-        </div>
-      </article>
+        </article>
+      </div>
     </div>
-  </div>
 
-  <!-- Lightbox (modal) -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lb-close" aria-label="Cerrar (Esc)">&times;</button>
-    <div class="lb-content" role="dialog" aria-modal="true" aria-label="Visor de medios"></div>
-  </div>
-</section>
-
+    <!-- Lightbox (modal) -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lb-close" aria-label="Cerrar (Esc)">&times;</button>
+      <div class="lb-content" role="dialog" aria-modal="true" aria-label="Visor de medios"></div>
+    </div>
+  </section>
 
   <!-- ===== Contacto ===== -->
-<section id="contacto" class="contact" aria-label="Contacto">
-  <div class="container">
-    <h2>Contactanos</h2>
+  <section id="contacto" class="contact" aria-label="Contacto">
+    <div class="container">
+      <h2>Contactanos</h2>
 
-    <div class="contact-grid">
-      <!-- Mapa: Martínez -->
-      <article class="map-card fade-in">
-        <h3>Consultorio Martínez</h3>
-        <div class="map">
-          <!-- Pegá aquí el EMBED de Google Maps para tu dirección de Martínez -->
-          <iframe
-            title="Mapa Consultorio Martínez"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.9890430436753!2d-58.52823725969066!3d-34.50552661056074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb1a94d0228af%3A0x939bba707f58e27d!2sViviana%20Grig%C3%BCelo%20y%20Esteban%20Vaccaro%20R%C3%8DO%20ODONTOLOG%C3%8DA!5e0!3m2!1ses!2sar!4v1755889446396!5m2!1ses!2sar"
-            width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-        <p class="map-note">
-          <a href="https://maps.google.com" target="_blank" rel="noopener">Abrir en Google Maps</a>
-        </p>
-      </article>
+      <div class="contact-grid">
+        <!-- Mapa: Martínez -->
+        <article class="map-card fade-in">
+          <h3>Consultorio Martínez</h3>
+          <div class="map">
+            <!-- TODO: Pegar EMBED correcto desde Google Maps (Compartir > Insertar un mapa) -->
+            <iframe
+              title="Mapa Consultorio Martínez"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.9890430436753!2d-58.52823725969066!3d-34.50552661056074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb1a94d0228af%3A0x939bba707f58e27d!2sViviana%20Grig%C3%BCelo%20y%20Esteban%20Vaccaro%20R%C3%8DO%20ODONTOLOG%C3%8DA!5e0!3m2!1ses!2sar!4v1755889446396!5m2!1ses!2sar"
+              width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <p class="map-note">
+            <a href="https://maps.app.goo.gl/XXXXXXXX" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </p>
+        </article>
 
-      <!-- Mapa: Munro -->
-      <article class="map-card fade-in">
-        <h3>Consultorio Munro</h3>
-        <div class="map">
-          <iframe
-            title="Mapa Consultorio Munro"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.984769112324!2d-58.52094552342062!3d-34.528613853537045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0d04697e663%3A0xbd6a536d8372de74!2sMaquinista%20Carregal%202445%2C%20B1605BVI%20Munro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1754721267865!5m2!1ses!2sar"
-            width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-        <p class="map-note">
-          <a href="https://maps.google.com" target="_blank" rel="noopener">Abrir en Google Maps</a>
-        </p>
-      </article>
+        <!-- Mapa: Munro -->
+        <article class="map-card fade-in">
+          <h3>Consultorio Munro</h3>
+          <div class="map">
+            <!-- TODO: Pegar EMBED correcto desde Google Maps -->
+            <iframe
+              title="Mapa Consultorio Munro"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.984769112324!2d-58.52094552342062!3d-34.528613853537045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0d04697e663%3A0xbd6a536d8372de74!2sMaquinista%20Carregal%202445%2C%20B1605BVI%20Munro%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1754721267865!5m2!1ses!2sar"
+              width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <p class="map-note">
+            <a href="https://maps.app.goo.gl/YYYYYYYY" target="_blank" rel="noopener">Abrir en Google Maps</a>
+          </p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer" role="contentinfo">
@@ -319,7 +363,8 @@
         </div>
 
         <div class="contact-info">
-          <p>Dirección: <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.9890430436753!2d-58.52823725969066!3d-34.50552661056074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb1a94d0228af%3A0x939bba707f58e27d!2sViviana%20Grig%C3%BCelo%20y%20Esteban%20Vaccaro%20R%C3%8DO%20ODONTOLOG%C3%8DA!5e0!3m2!1ses!2sar!4v1755889446396!5m2!1ses!2sar" target="_blank" rel="noopener">Río de Janeiro 2293, Martinez</a></p>
+          <!-- IMPORTANTE: link normal (no /embed) -->
+          <p>Dirección: <a href="https://maps.app.goo.gl/2k6qvZB7hEXEMPLO" target="_blank" rel="noopener">Río de Janeiro 2293, Martínez</a></p>
           <p>Email: <a href="mailto:carabonita@gmail.com">carabonita@gmail.com</a></p>
           <p>Tel: <a href="tel:+5491138523271">+54 9 11 3852-3271</a></p>
         </div>
@@ -338,3 +383,4 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+

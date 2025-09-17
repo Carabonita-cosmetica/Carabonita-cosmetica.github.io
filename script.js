@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
           links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === id));
         }
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.55, rootMargin: "-10% 0px -35% 0px" });
     sections.forEach(s => spy.observe(s));
   }
 
@@ -60,11 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ============================
      PARALLAX SUAVE EN HERO
+     (requestAnimationFrame + translate3d)
      ============================ */
-  const parallax = document.querySelector('.hero .parallax');
-  if (parallax) {
+  const parallaxImg = document.querySelector('.hero .parallax img');
+  if (parallaxImg) {
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      parallax.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          parallaxImg.style.transform = `translate3d(0, ${window.scrollY * 0.3}px, 0)`;
+          ticking = false;
+        });
+      }
     }, { passive: true });
   }
 
@@ -74,27 +82,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const lb = document.getElementById('lightbox');
   const lbContent = lb?.querySelector('.lb-content');
   const lbClose = lb?.querySelector('.lb-close');
+  let lastFocus = null;
 
   function openLightbox({ type, src, poster }) {
     if (!lb || !lbContent) return;
+    lastFocus = document.activeElement;
 
     lbContent.innerHTML = '';
+    let node;
     if (type === 'image') {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = '';
-      lbContent.appendChild(img);
-    } else if (type === 'video') {
-      const video = document.createElement('video');
-      video.src = src;
-      if (poster) video.poster = poster;
-      video.controls = true;
-      video.autoplay = true;
-      lbContent.appendChild(video);
+      node = document.createElement('img');
+      node.src = src;
+      node.alt = '';
+      lbContent.setAttribute('aria-label', 'Imagen ampliada');
+    } else {
+      node = document.createElement('video');
+      node.src = src;
+      if (poster) node.poster = poster;
+      node.controls = true;
+      node.autoplay = true;
+      lbContent.setAttribute('aria-label', 'Video ampliado');
     }
+    lbContent.appendChild(node);
+
     lb.classList.add('open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    lbClose?.focus();
   }
 
   function closeLightbox() {
@@ -105,8 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
     lb.classList.remove('open');
     lb.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    lastFocus?.focus();
   }
-
 
   lbClose?.addEventListener('click', closeLightbox);
   lb?.addEventListener('click', (e) => {
@@ -115,8 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
   });
-  
-    /* ============================
+
+  /* ============================
      CAROUSEL (Consultorios)
      ============================ */
   const carousels = document.querySelectorAll('[data-carousel]');
