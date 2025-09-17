@@ -302,3 +302,66 @@ section{padding-block:clamp(64px,9vw,100px)}
 @media (prefers-contrast: more){
   .btn{box-shadow:none}
 }
+
+/* ===== Header móvil (≤ 600px) ===== */
+@media (max-width: 600px){
+  /* Bajamos la altura declarada del header */
+  :root{ --header-h: 64px; }
+
+  /* Compactamos el contenedor del header */
+  .header .container{
+    padding-inline: 12px;
+    gap: 10px;
+  }
+
+  /* Reducimos el logo para que no rompa el layout */
+  .logo img{
+    max-height: 56px;   /* antes 95px */
+    height: auto; width: auto;
+  }
+
+  /* Ícono hamburguesa un poco más chico */
+  .hamburger span{
+    width: 24px; height: 3px;
+  }
+
+  /* Mejora de legibilidad del menú móvil */
+  .nav-menu ul{
+    gap: 6px;
+  }
+  .nav-menu a{
+    padding: 14px 6px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px){
+  .hero{
+    padding-top: var(--header-h);
+  }
+}
+
+/* Safe-area (notch) */
+.header{
+  padding-top: env(safe-area-inset-top);
+}
+@supports (padding: max(0px)){
+  .header{
+    padding-top: max(env(safe-area-inset-top), 0px);
+  }
+}
+
+@media (max-width: 920px){
+  .nav-menu{
+    background: rgba(255,255,255,0.98); /* más opaque */
+    z-index: 1200;                       /* sobre el header */
+    -webkit-overflow-scrolling: touch;   /* scroll suave iOS */
+  }
+  .nav-menu ul{
+    padding: 14px 16px 24px;
+  }
+}
+
+@media (max-width: 600px){
+  html{ scroll-padding-top: var(--header-h); }
+}
