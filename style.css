@@ -365,3 +365,27 @@ section{padding-block:clamp(64px,9vw,100px)}
 @media (max-width: 600px){
   html{ scroll-padding-top: var(--header-h); }
 }
+
+@media (max-width: 920px){
+  .hamburger{display:flex !important;}              /* que se vea sí o sí */
+  .nav-menu{position:fixed; inset:var(--header-h) 0 auto 0; background:#fff; box-shadow:var(--shadow); transform:translateY(-100%); transition:transform .3s ease; z-index:1200;}
+  .nav-menu.open{transform:translateY(0);}
+  /* clave: ocultar la lista por defecto y mostrarla solo al abrir */
+  .nav-menu > ul{display:none; flex-direction:column; padding:18px 24px; gap:10px;}
+  .nav-menu.open > ul{display:flex;}
+}
+
+@media (max-width: 600px){
+  :root{ --header-h:64px; }
+  .header .container{padding-inline:12px; gap:10px;}
+  .logo img{max-height:56px;}
+}
+
+@media (max-width: 600px){
+  .hero{padding-top: var(--header-h);}
+}
+
+.header{z-index:1300; padding-top: env(safe-area-inset-top);}
+@supports (padding: max(0px)){
+  .header{padding-top: max(env(safe-area-inset-top), 0px);}
+}
