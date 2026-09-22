@@ -1,0 +1,11 @@
+{
+  "name": "Carabonita · Cosmiatría en Munro y Martínez",
+  "short_name": "Carabonita",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FFFCFB",
+  "theme_color": "#A8445F",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
